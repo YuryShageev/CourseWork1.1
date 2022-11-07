@@ -12,7 +12,20 @@ public class Main {
         employees[7] = new Employee("Смит Иии Вессон", 1, 99374);
         employees[8] = new Employee("Пистолет Пулемёт Шпагина", 5, 70437);
         employees[9] = new Employee("Grand Theft Auto", 4, 59673);
+        printListOfEmployees(employees);
 
+    }
+
+    public static void printListOfEmployees(Employee[] employees) {
+        if (employees.length == 0) {
+            System.out.println("is empty");
+            return;
+        }
+        for (int i = 0; i < employees.length; i++){
+            if (employees[i] != null) {
+                System.out.println(employees[i].toString());
+            }
+        }
 
     }
 }
