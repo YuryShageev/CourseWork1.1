@@ -14,6 +14,9 @@ public class Main {
         employees[9] = new Employee("Grand Theft Auto", 4, 59673);
         printListOfEmployees(employees);
 
+        printTotalSalary(employees);
+
+        printMinSalary(employees);
     }
 
     public static void printListOfEmployees(Employee[] employees) {
@@ -28,4 +31,24 @@ public class Main {
         }
 
     }
+
+    public static void printTotalSalary(Employee[] employees) {
+        int totalSalary = 0;
+        for (int i = 0; i < employees.length; i++) {
+            totalSalary += employees[i].getSalary();
+        }
+        System.out.println("Сумма затрат за месяц: " + totalSalary);
+    }
+
+    public static void printMinSalary(Employee[] employees) {
+        int minEmployeeSalary = employees[0].getSalary();
+        for (int i = 0; i < employees.length; i++) {
+            if (minEmployeeSalary > employees[i].getSalary()) {
+                minEmployeeSalary = employees[i].getSalary();
+                System.out.println("Минимальная зарплата в: " + minEmployeeSalary + " рублей, сотрудника " + employees[i].getFullName() + " за месяц");
+            }
+        }
+    }
+
+
 }
