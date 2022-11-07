@@ -39,6 +39,7 @@ public class Employee {
         this.salary = salary;
     }
 
+
     @Override
     public String toString() {
         return "Сотрудник под номером: " + id + " По имени: " + fullName + " Отдела: " + departments + " Получает " + salary + " рублей";
