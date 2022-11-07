@@ -17,6 +17,12 @@ public class Main {
         printTotalSalary(employees);
 
         printMinSalary(employees);
+
+        printMaxSalary(employees);
+
+        printAverageSalary(employees);
+
+        printEmployeeNames(employees);
     }
 
     public static void printListOfEmployees(Employee[] employees) {
@@ -47,6 +53,32 @@ public class Main {
                 minEmployeeSalary = employees[i].getSalary();
                 System.out.println("Минимальная зарплата в: " + minEmployeeSalary + " рублей, сотрудника " + employees[i].getFullName() + " за месяц");
             }
+        }
+    }
+
+    public static void printMaxSalary(Employee[] employees) {
+        int maxEmployeeSalary = employees[0].getSalary();
+        for (int i = 0; i < employees.length; i++) {
+            if (maxEmployeeSalary < employees[i].getSalary()) {
+                maxEmployeeSalary = employees[i].getSalary();
+                System.out.println("Максимальная зарплата в: " + maxEmployeeSalary + " рублей, сотрудника " + employees[i].getFullName() + " за месяц");
+            }
+
+        }
+
+    }
+
+    public static void printAverageSalary(Employee[] employees) {
+        int averageSalary = 0;
+        for (int i = 0; i < employees.length; i++) {
+            averageSalary += employees[i].getSalary() / employees.length;
+            System.out.println("Средняя зарплата в: " + averageSalary + " рублей, сотрудника " + employees[i].getFullName() + " за месяц");
+        }
+    }
+
+    public static void printEmployeeNames(Employee[] employees) {
+        for (int i = 0; i < employees.length; i++) {
+            System.out.println(employees[i].getFullName());
         }
     }
 
