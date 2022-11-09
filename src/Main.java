@@ -48,33 +48,39 @@ public class Main {
     }
 
     public static void printMinSalary(Employee[] employees) {
+        String chooseName = new String();
         int minEmployeeSalary = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
             if (minEmployeeSalary > employees[i].getSalary()) {
                 minEmployeeSalary = employees[i].getSalary();
-                System.out.println("Минимальная зарплата в: " + minEmployeeSalary + " рублей, сотрудника " + employees[i].getFullName() + " за месяц");
+                chooseName = employees[i].getFullName();
             }
         }
+        System.out.println("Минимальная зарплата в: " + minEmployeeSalary + " рублей, сотрудника " + chooseName + " за месяц");
     }
 
     public static void printMaxSalary(Employee[] employees) {
+        String chooseName = new String();
         int maxEmployeeSalary = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
             if (maxEmployeeSalary < employees[i].getSalary()) {
                 maxEmployeeSalary = employees[i].getSalary();
-                System.out.println("Максимальная зарплата в: " + maxEmployeeSalary + " рублей, сотрудника " + employees[i].getFullName() + " за месяц");
+                chooseName = employees[i].getFullName();
             }
 
         }
+        System.out.println("Максимальная зарплата в: " + maxEmployeeSalary + " рублей, сотрудника " + chooseName + " за месяц");
 
     }
 
     public static void printAverageSalary(Employee[] employees) {
+        String findAveSalaryGuy = null;
         int averageSalary = 0;
         for (int i = 0; i < employees.length; i++) {
             averageSalary += employees[i].getSalary() / employees.length;
-            System.out.println("Средняя зарплата в: " + averageSalary + " рублей, сотрудника " + employees[i].getFullName() + " за месяц");
+            findAveSalaryGuy = employees[i].getFullName();
         }
+        System.out.println("Средняя зарплата в: " + averageSalary + " рублей, сотрудника " + findAveSalaryGuy + " за месяц");
     }
 
     public static void printEmployeeNames(Employee[] employees) {
