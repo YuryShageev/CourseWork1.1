@@ -48,7 +48,7 @@ public class Main {
     }
 
     public static void printMinSalary(Employee[] employees) {
-        String chooseName = new String();
+        String chooseName = null;
         int minEmployeeSalary = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
             if (minEmployeeSalary > employees[i].getSalary()) {
@@ -60,7 +60,7 @@ public class Main {
     }
 
     public static void printMaxSalary(Employee[] employees) {
-        String chooseName = new String();
+        String chooseName = null;
         int maxEmployeeSalary = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
             if (maxEmployeeSalary < employees[i].getSalary()) {
@@ -88,6 +88,7 @@ public class Main {
             System.out.println(employees[i].getFullName());
         }
     }
+
 
 
 }
