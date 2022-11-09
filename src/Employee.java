@@ -52,4 +52,9 @@ public class Employee {
         Employee employee = (Employee) obj;
         return Objects.equals(fullName, employee.fullName) && Objects.equals(departments, employee.departments) && Objects.equals(salary, employee.salary);
     }
+
+    @Override
+    public int hashCode() {
+return Objects.hash(id, fullName, departments, salary);
+    }
 }
