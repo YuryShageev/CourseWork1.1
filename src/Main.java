@@ -1,5 +1,6 @@
 public class Main {
     private static Employee[] employees = new Employee[10];
+
     public static void main(String[] args) {
 
 
@@ -31,7 +32,7 @@ public class Main {
             System.out.println("is empty");
             return;
         }
-        for (int i = 0; i < employees.length; i++){
+        for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
                 System.out.println(employees[i].toString());
             }
@@ -74,13 +75,14 @@ public class Main {
     }
 
     public static void printAverageSalary(Employee[] employees) {
-        String findAveSalaryGuy = null;
+
+        int totalSalary = 0;
         int averageSalary = 0;
         for (int i = 0; i < employees.length; i++) {
-            averageSalary += employees[i].getSalary() / employees.length;
-            findAveSalaryGuy = employees[i].getFullName();
+            totalSalary += employees[i].getSalary();
+            averageSalary = totalSalary / employees.length;
         }
-        System.out.println("Средняя зарплата в: " + averageSalary + " рублей, сотрудника " + findAveSalaryGuy + " за месяц");
+        System.out.println("Средняя зарплата всех сотрудников: " + averageSalary);
     }
 
     public static void printEmployeeNames(Employee[] employees) {
@@ -88,7 +90,6 @@ public class Main {
             System.out.println(employees[i].getFullName());
         }
     }
-
 
 
 }
